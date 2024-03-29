@@ -96,7 +96,7 @@ public class BaseClass1 {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss");
 		Date date = new Date();
 		String formatedDate = sdf.format(date);
-		String destinationPath = "C://Users//vijayh//Desktop//workspace java//TodayPractice//ScreenShotsInJAVA//"
+		String destinationPath = System.getProperty("user.dir")+"//screenshotsfolder/"
 				+ testMethodName + formatedDate + ".png";
 		File dest = new File(destinationPath);
 		try {
@@ -104,6 +104,7 @@ public class BaseClass1 {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		System.out.println("i am taking screen shot");
 		return destinationPath;
 
 	}

@@ -11,7 +11,6 @@ public class TestClass1 extends BaseClass1 {
 
 	@Test(dataProvider = "provideData")
 	public void checkTest(String email, String password) throws Exception {
-
 		driver.findElement(By.xpath("//input[@id='userEmail']")).clear();
 		driver.findElement(By.xpath("//input[@id='userEmail']")).sendKeys(email);
 		driver.findElement(By.xpath("//input[@id='userPassword']")).clear();
@@ -21,7 +20,6 @@ public class TestClass1 extends BaseClass1 {
 		// Assert.fail();
 		// Thread.sleep(10000);
 		// driver.close();
-
 	}
 
 	@DataProvider

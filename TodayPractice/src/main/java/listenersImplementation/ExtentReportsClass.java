@@ -8,7 +8,7 @@ public class ExtentReportsClass {
 	public static ExtentReports createExtentReports() {
 
 		ExtentSparkReporter reporter = new ExtentSparkReporter(
-				"C://Users//vijayh//Desktop//workspace java//TodayPractice//ExtentReportsFolder/index.html");
+				System.getProperty("user.dir")+"//ExtentReportsFoldersss/indexes.html");
 
 		reporter.config().setDocumentTitle("WebAutomation__Testing");
 		reporter.config().setReportName("VijayHariSKReports");

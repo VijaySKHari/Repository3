@@ -44,6 +44,7 @@ public class ListenerClass extends BaseClass1 implements ITestListener {
 		}
 		String srcForExtentRportScreenShot = screenShootTake(result.getMethod().getMethodName(), driver);
 		threadLocal.get().addScreenCaptureFromPath(srcForExtentRportScreenShot, result.getMethod().getMethodName());
+		System.out.println("addscreencaptured executed");
 	}
 
 	@Override
