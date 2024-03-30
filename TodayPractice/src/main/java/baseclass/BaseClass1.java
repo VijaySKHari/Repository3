@@ -1,8 +1,12 @@
 package baseclass;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -12,6 +16,10 @@ import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.util.Units;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
@@ -20,6 +28,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
+import com.google.common.io.Files;
 
 public class BaseClass1 {
 	public WebDriver driver;
@@ -89,24 +99,24 @@ public class BaseClass1 {
 
 	}
 
-	public String screenShootTake(String testMethodName, WebDriver driver) {
+	//public String screenShootTake(String testMethodName, WebDriver driver) {
 
-		TakesScreenshot screenShotDriver = (TakesScreenshot) driver;
-		File src = screenShotDriver.getScreenshotAs(OutputType.FILE);
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss");
-		Date date = new Date();
-		String formatedDate = sdf.format(date);
-		String destinationPath = System.getProperty("user.dir")+"//screenshotsfolder/"
-				+ testMethodName + formatedDate + ".png";
-		File dest = new File(destinationPath);
-		try {
-			FileUtils.copyFile(src, dest);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		System.out.println("i am taking screen shot");
-		return destinationPath;
+//		TakesScreenshot screenShotDriver = (TakesScreenshot) driver;
+//		File src = screenShotDriver.getScreenshotAs(OutputType.FILE);
+//		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss");
+//		Date date = new Date();
+//		String formatedDate = sdf.format(date);
+//		String destinationPath = System.getProperty("user.dir")+"//screenshotsfolder/"
+//				+ testMethodName + formatedDate + ".png";
+//		File dest = new File(destinationPath);
+//		try {
+//			FileUtils.copyFile(src, dest);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		System.out.println("i am taking screen shot");
+//		return destinationPath;
 
-	}
-
+	
+		
 }
